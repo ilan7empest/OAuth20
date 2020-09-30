@@ -1,11 +1,13 @@
-App Building Steps
-1. Install npm i -s express mongoose dotenv 
-2. Install npm i --save-dev nodemon
-3. Create app.js file with express and export module
-4. Create db.js file with mongoose connection to MongoDB. Once db connection established, run server app
-5. Use .env file to hide MongoDB URI + config file to display the process.env.URI+PORT by production/development
-6. Install passport passport-google-oauth20 cookie-session
-7. Use passport with google Strategy to login user 
-
-
-USE Google credentials "https://console.developers.google.com/" production version in heruko
+##Steps for google signup using OAuth20
+1. Clone repository
+2. Create .env file in root folder with the following key=value
+    PORT: localhost port,
+    MONGO_URI: "Connection string to Mongodb",
+    GOOGLE_CLIENT_SECRET: secret text/characters,
+    GOOGLE_CLIENT_ID:  Google Client Id. Create credentials "https://console.developers.google.com/,
+    GOOGLE_REDIRECT_URI: domain url for the redirect path after signup (example: "http://localhost:1234"),
+    COOKIE_SESSION_SECRET: secret text/characters,
+3. Signup path  = "domain/auth/google" = GET Request
+4. After signup google redirects to "/" if successful or "/login" if failed
+5. Use is-auth middleware to check authenticated user
+    
