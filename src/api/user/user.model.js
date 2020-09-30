@@ -12,12 +12,6 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
   },
-  // recipes: [
-  //   {
-  //     type: mongoose.Schema.Types.ObjectId,
-  //     ref: "Recipe",
-  //   },
-  // ],
 });
 
 // userSchema.method.login = () => {
